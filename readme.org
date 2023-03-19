@@ -1,0 +1,32 @@
+This is a classification task with 7 categories, involving two files:
+
++ =train.npz=
++ =test.x.npz=
+
+The training file contains 8,000 samples, each consisting of 100 features and 7 labels. The testing file comprises 2,000 samples, each having 100 features.
+
+To load the files, you can use the following code:
+
+```
+import numpy as np
+train = np.load('train.npz')
+test = np.load('test.x.npz')
+train_x, train_y = train['x'], train['y']
+test_x = test['x']
+```
+
+Your objective is to classify and predict the 2,000 test data samples and obtain 2,000 rows of labels ranging from 0 to 6.
+
+For example:
+
+#+begin_src python
+  pred = model(test_x)   # 2000 x 1 matrix
+  print(pred)
+  # [[0],
+  #  [6],
+  #  [2],
+  #  ...,
+  #  [1],
+  #  [3]]
+  np.savetxt("pred.txt", pred, fmt="%d")
+#+end_src
