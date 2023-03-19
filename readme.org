@@ -1,3 +1,5 @@
+* Description
+
 This is a classification task with 7 categories, involving two files:
 
 + =train.npz=
@@ -7,13 +9,13 @@ The training file contains 8,000 samples, each consisting of 100 features and 7 
 
 To load the files, you can use the following code:
 
-```
-import numpy as np
-train = np.load('train.npz')
-test = np.load('test.x.npz')
-train_x, train_y = train['x'], train['y']
-test_x = test['x']
-```
+#+begin_src python
+  import numpy as np
+  train = np.load('train.npz')
+  test = np.load('test.x.npz')
+  train_x, train_y = train['x'], train['y']
+  test_x = test['x']
+#+end_src
 
 Your objective is to classify and predict the 2,000 test data samples and obtain 2,000 rows of labels ranging from 0 to 6.
 
@@ -30,3 +32,57 @@ For example:
   #  [3]]
   np.savetxt("pred.txt", pred, fmt="%d")
 #+end_src
+
+* Baseline
+
+You could see a baseline model in ~src/simp/baseline.py~.  It is a simple MLP model with 3 hidden layers, dropout and batch normalization.  The accuracy is about 0.8.
+
+To run it:
+
+** Requirements
+
+You need to install the following packages:
+
+#+begin_src toml
+  dependencies = [
+      "jax>=0.4.6",
+      "jaxlib>=0.4.6",
+      "dm-haiku>=0.0.9",
+      "optax @ git+https://github.com/deepmind/optax.git",
+      "numpy>=1.24.2",
+      "rich>=13.3.2",
+  ]
+#+end_src
+
+Or using ~pdm~ https://pdm.fming.dev/latest/ to install dependencies:
+
+#+begin_src sh
+  pdm install
+#+end_src
+
+** Run
+
+You could run the baseline model by:
+
+#+begin_src sh
+  python src/simp/baseline.py
+
+  # or if you use pdm
+  pdm run python src/simp/baseline.py
+#+end_src
+
+* Evaluation
+
+We evaluate the predition txt using accuracy.  The accuracy is defined as:
+
+#+begin_src python
+  def accuracy(pred, label):
+      return np.mean(pred == label)
+#+end_src
+
+You could see an example in ~src/simp/test_results.py~.
+
+* Submit
+
+Please submit your code and the prediction file named ~pred.txt~ to the issues of this repository, named ~[submit] xxx~, where =xxx= is any code name you want.
+We'll evaluate your code and the predition and give you the score. See an example here: https://github.com/uta-smile/lab_exp_2023s/issues/1
