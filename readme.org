@@ -22,7 +22,7 @@ Your objective is to classify and predict the 2,000 test data samples and obtain
 For example:
 
 #+begin_src python
-  pred = model(test_x)   # 2000 x 1 matrix
+  pred = model(test_x)  # 2000 x 1 matrix
   print(pred)
   # [[0],
   #  [6],
@@ -30,7 +30,9 @@ For example:
   #  ...,
   #  [1],
   #  [3]]
-  np.savetxt("pred.csv", np.asarray(list(enumerate(pred.reshape(-1)))), fmt="%d", delimiter=",")
+  np.savetxt(
+      "pred.csv", np.asarray(list(enumerate(pred.reshape(-1)))), fmt="%d", delimiter=","
+  )
 #+end_src
 
 * Baseline
