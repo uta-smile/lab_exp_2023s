@@ -126,7 +126,12 @@ def main() -> None:
     test_pred = jnp.argmax(
         jax.nn.softmax(model.apply(params, states, None, tex, train=False)[0]), axis=-1
     )
-    np.savetxt("pred.txt", test_pred, fmt="%d")
+    np.savetxt(
+        "pred.csv",
+        np.asarray(list(enumerate(test_pred.reshape(-1)))),
+        fmt="%d",
+        delimiter=",",
+    )
 
 
 if __name__ == "__main__":
