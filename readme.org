@@ -1,5 +1,7 @@
 * Description
 
+Kaggle competition: https://www.kaggle.com/t/75b7714a366c4886b0c72143e5a28fec
+
 This is a classification task with 7 categories, involving two files:
 
 + =train.npz=
