@@ -31,7 +31,12 @@ For example:
   #  [1],
   #  [3]]
   np.savetxt(
-      "pred.csv", np.asarray(list(enumerate(pred.reshape(-1)))), fmt="%d", delimiter=","
+      "pred.csv",
+      np.asarray(list(enumerate(pred.reshape(-1)))),
+      fmt="%d",
+      delimiter=",",
+      header="id,label",
+      comments="",
   )
 #+end_src
 

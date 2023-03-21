@@ -131,6 +131,8 @@ def main() -> None:
         np.asarray(list(enumerate(test_pred.reshape(-1)))),
         fmt="%d",
         delimiter=",",
+        header="id,label",
+        comments="",
     )
 
 

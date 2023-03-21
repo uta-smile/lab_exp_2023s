@@ -40,7 +40,7 @@ from rich import print
 # Math
 import numpy as np
 
-pred = np.loadtxt("pred.csv", delimiter=",")
+pred = np.loadtxt("labels.csv", delimiter=",", skiprows=1)
 label = np.load("test.y.npz")["y"]
 
-print("Accuracy: ", np.mean(pred[:,1] == label))
+print("Accuracy: ", np.mean(pred[:, 1] == label))
