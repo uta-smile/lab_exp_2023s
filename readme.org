@@ -81,8 +81,3 @@ We evaluate the predition txt using accuracy.  The accuracy is defined as:
 #+end_src
 
 You could see an example in ~src/simp/test_results.py~.
-
-* Submit
-
-Please submit your code and the prediction file named ~pred.txt~ to the issues of this repository, named ~[submit] xxx~, where =xxx= is any code name you want.
-We'll evaluate your code and the predition and give you the score. See an example here: https://github.com/uta-smile/lab_exp_2023s/issues/1
