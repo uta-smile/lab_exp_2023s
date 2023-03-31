@@ -1,6 +1,6 @@
 * Description
 
-Kaggle competition: https://www.kaggle.com/t/75b7714a366c4886b0c72143e5a28fec
+Kaggle competition: https://www.kaggle.com/t/c88b47a9221b43dc95f73cd696b5695f
 
 This is a classification task with 7 categories, involving two files:
 
